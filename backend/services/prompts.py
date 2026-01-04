@@ -78,6 +78,27 @@ def get_ppt_language_instruction(language: str = None) -> str:
     return config['ppt_text']
 
 
+def get_image_text_language_instruction(language: str = None) -> str:
+    """
+    获取图片上文字的语言限制指令（用于电商图片生成）
+    
+    Args:
+        language: 语言代码，如果为 None 则使用默认语言
+    
+    Returns:
+        图片文字语言限制指令
+    """
+    lang = language if language else get_default_output_language()
+    if lang == 'zh':
+        return "图片上的所有文字请使用全中文。"
+    elif lang == 'ja':
+        return "画像上のすべてのテキストは日本語で表示してください。"
+    elif lang == 'en':
+        return "All text on the image should be in English."
+    else:
+        return ""  # 自动模式不添加语言限制
+
+
 def _format_reference_files_xml(reference_files_content: Optional[List[Dict[str, str]]]) -> str:
     """
     Format reference files content as XML structure
