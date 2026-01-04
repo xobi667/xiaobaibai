@@ -10,7 +10,6 @@ from .response import (
 )
 from .validators import validate_project_status, validate_page_status, allowed_file
 from .path_utils import convert_mineru_path_to_local, find_mineru_file_with_prefix, find_file_with_prefix
-from .pptx_builder import PPTXBuilder
 from .page_utils import parse_page_ids_from_query, parse_page_ids_from_body, get_filtered_pages
 
 __all__ = [
@@ -27,7 +26,6 @@ __all__ = [
     'convert_mineru_path_to_local',
     'find_mineru_file_with_prefix',
     'find_file_with_prefix',
-    'PPTXBuilder',
     'parse_page_ids_from_query',
     'parse_page_ids_from_body',
     'get_filtered_pages'
